@@ -12,19 +12,15 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    springAiVersion = '1.0.0'
-}
-
 kotlin {
     jvmToolchain(21)
 }
 
 dependencies {
 
-    implementation platform("org.springframework.ai:spring-ai-bom:${springAiVersion}")
-    implementation 'org.springframework.ai:spring-ai-starter-model-openai'
-    
+    implementation 'org.springframework.ai:spring-ai-starter-model-openai:1.0.1'
+    implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

@@ -2,3 +2,12 @@ spring:
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-5-nano
+          temperature: 1
+          max-completion-tokens: 4096
+          internal-tool-execution-enabled: false
+    chat:
+      observations:
+        log-prompt: true
