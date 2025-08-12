@@ -6,7 +6,7 @@ spring:
         options:
           model: gpt-5-nano
           temperature: 1
-          max-completion-tokens: 4096
+          max-completion-tokens: 10000
           internal-tool-execution-enabled: false
     chat:
       observations:

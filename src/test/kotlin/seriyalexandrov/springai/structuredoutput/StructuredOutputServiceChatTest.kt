@@ -1,5 +1,6 @@
 package seriyalexandrov.springai.structuredoutput
 
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -22,4 +23,18 @@ class StructuredOutputServiceChatTest {
             assertThat(it.briefExplanation).isNotBlank
         }
     }
+
+    @Test
+    fun `should solve a logical problem`() {
+        val response = chatService.solveLogicalProblem(
+            "У меня есть металлическая чашка, но у неё наглухо закрыто верхнее отверстие. " +
+                    "Также у неё отпилено дно. Как из неё можно пить? " +
+                    "Переделать чашку нельзя, держать воду рукой тоже."
+        )!!
+
+        val beautified = jacksonObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(response)
+        println(beautified)
+    }
+
+
 }

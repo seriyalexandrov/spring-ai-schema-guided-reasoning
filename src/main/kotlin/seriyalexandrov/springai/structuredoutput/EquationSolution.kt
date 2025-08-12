@@ -2,7 +2,7 @@ package seriyalexandrov.springai.structuredoutput
 
 import com.fasterxml.jackson.annotation.JsonPropertyDescription
 
-data class EquationResult(
+data class EquationSolution(
     val resolutionSteps: List<Step>,
     val results: List<Double>,
 )
